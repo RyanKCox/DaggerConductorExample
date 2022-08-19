@@ -42,15 +42,10 @@ class TitlePresenter @Inject constructor(
 
     }
     private fun createNewUser(){
-        var count = 0
+        val count = userRepo.getUsers().size
         var name = "User"
-        if(userRepo.getUsers().isEmpty()){
-            name+=count.toString()
-        }
-        else{
-            count = userRepo.getUsers().size
-            name+=count.toString()
-        }
+
+        name+=count.toString()
         userRepo.createUser(name,"$name@fakeEmail.com")
 
     }
