@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.revature.daggerconductorexample"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures{
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    def conductor = "3.1.7"
+    def conductorSupport = "2.1.5"
+    def mosbyVersion = "3.1.0"
+    def rxBinding = "2.1.1"
+    def groupie = "2.10.1"
+    def dagger = "2.43.2"
+    def androidxAnnotations = "1.4.0"
+    def contributer = "1.0.0"
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //Conductor
+    implementation "com.bluelinelabs:conductor:$conductor"
+    implementation("com.bluelinelabs:conductor-support:$conductorSupport")
+    implementation("com.bluelinelabs:conductor-rxlifecycle2:$conductorSupport")
+
+    //Mosby
+    implementation "com.hannesdorfmann.mosby3:mvi-common:$mosbyVersion"
+    implementation "com.hannesdorfmann.mosby3:mvi-conductor:$mosbyVersion"
+
+    //RxBinding
+    implementation "com.jakewharton.rxbinding2:rxbinding-support-v4-kotlin:$rxBinding"
+    implementation "com.jakewharton.rxbinding2:rxbinding-design-kotlin:$rxBinding"
+    implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:$rxBinding"
+    implementation "com.jakewharton.rxbinding2:rxbinding-kotlin:$rxBinding"
+
+    //Groupie
+    implementation "com.github.lisawray.groupie:groupie:$groupie"
+    implementation "com.github.lisawray.groupie:groupie-viewbinding:$groupie"
+
+    //Dagger
+    implementation "com.google.dagger:dagger:$dagger"
+    implementation "com.google.dagger:dagger-android-support:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+    kapt "com.google.dagger:dagger-android-processor:$dagger"
+
+    //Support Libs
+    implementation "androidx.annotation:annotation:$androidxAnnotations"
+}
