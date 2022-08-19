@@ -7,7 +7,6 @@ import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
 import com.revature.daggerconductorexample.databinding.ActivityMainBinding
 import com.revature.daggerconductorexample.presentation.mainmenu.MainMenuController
-import com.revature.daggerconductorexample.presentation.title.DisplayUsersController
 
 class MainActivity : AppCompatActivity() {
 
