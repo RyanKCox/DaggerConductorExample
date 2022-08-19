@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 class TitlePresenter @Inject constructor(
-    val userRepo:UserRepository
+    private val userRepo:UserRepository
 ): MviBasePresenter<TitleView,TitleViewState>() {
 
 
