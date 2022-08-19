@@ -43,7 +43,7 @@ class DisplayUsersController: MviController<TitleView,TitlePresenter>(),TitleVie
         textTotalUsers = binding.textTotalUsers
         textUserList = binding.textUsers
         progressBar = binding.progressBar
-        DaggerPresenterComponent.builder().provideRouter(router).build().inject(this)
+        DaggerPresenterComponent.builder().router(router).build().inject(this)
 
 
 //        presenter = TitlePresenter()

@@ -15,7 +15,7 @@ interface PresenterComponent {
     @Component.Builder
     interface Builder{
         @BindsInstance
-        fun provideRouter(router:Router):Builder
+        fun router(router:Router):Builder
         fun build():PresenterComponent
     }
 }

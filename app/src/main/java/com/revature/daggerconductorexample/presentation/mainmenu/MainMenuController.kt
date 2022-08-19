@@ -34,7 +34,7 @@ class MainMenuController:MviController<MainMenuView,MainMenuPresenter>(),MainMen
         val binder = ControllerMainmenuBinding.bind(view)
         enterButton = binder.btnEnter
 
-        DaggerPresenterComponent.builder().provideRouter(router).build().inject(this)
+        DaggerPresenterComponent.builder().router(router).build().inject(this)
     }
 
     override fun createPresenter() = presenter
@@ -45,9 +45,6 @@ class MainMenuController:MviController<MainMenuView,MainMenuPresenter>(),MainMen
         when(state){
             is MainMenuViewState.Display->{
                 enterButton.visibility = View.VISIBLE
-            }
-            else->{
-                enterButton.visibility = View.GONE
             }
         }
     }
