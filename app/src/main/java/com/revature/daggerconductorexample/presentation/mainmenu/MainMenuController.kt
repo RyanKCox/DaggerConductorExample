@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.hannesdorfmann.mosby3.MviController
 import com.jakewharton.rxbinding2.view.clicks
+import com.revature.daggerconductorexample.MainActivity
 import com.revature.daggerconductorexample.R
 import com.revature.daggerconductorexample.databinding.ControllerMainmenuBinding
-import com.revature.daggerconductorexample.presentation.di.DaggerPresenterComponent
 import javax.inject.Inject
 
 class MainMenuController:MviController<MainMenuView,MainMenuPresenter>(),MainMenuView {
@@ -34,7 +34,8 @@ class MainMenuController:MviController<MainMenuView,MainMenuPresenter>(),MainMen
         val binder = ControllerMainmenuBinding.bind(view)
         enterButton = binder.btnEnter
 
-        DaggerPresenterComponent.builder().router(router).build().inject(this)
+        (activity as MainActivity).getActivityComponent().inject(this)
+//        DaggerPresenterComponent.builder().router(router).build().inject(this)
     }
 
     override fun createPresenter() = presenter

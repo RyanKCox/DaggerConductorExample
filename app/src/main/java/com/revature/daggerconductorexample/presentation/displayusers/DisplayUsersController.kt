@@ -1,4 +1,4 @@
-package com.revature.daggerconductorexample.presentation.title
+package com.revature.daggerconductorexample.presentation.displayusers
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +9,10 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import com.hannesdorfmann.mosby3.MviController
 import com.jakewharton.rxbinding2.view.clicks
+import com.revature.daggerconductorexample.MainActivity
 import com.revature.daggerconductorexample.R
 import com.revature.daggerconductorexample.data.User
 import com.revature.daggerconductorexample.databinding.ControllerDisplayusersBinding
-import com.revature.daggerconductorexample.presentation.di.DaggerPresenterComponent
 import javax.inject.Inject
 
 class DisplayUsersController: MviController<TitleView,TitlePresenter>(),TitleView {
@@ -43,8 +43,8 @@ class DisplayUsersController: MviController<TitleView,TitlePresenter>(),TitleVie
         textTotalUsers = binding.textTotalUsers
         textUserList = binding.textUsers
         progressBar = binding.progressBar
-        DaggerPresenterComponent.builder().router(router).build().inject(this)
-
+//        DaggerPresenterComponent.builder().router(router).build().inject(this)
+        (activity as MainActivity).getActivityComponent().inject(this)
 
 //        presenter = TitlePresenter()
 

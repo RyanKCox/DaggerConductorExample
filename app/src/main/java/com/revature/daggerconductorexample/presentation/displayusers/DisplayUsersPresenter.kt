@@ -1,4 +1,4 @@
-package com.revature.daggerconductorexample.presentation.title
+package com.revature.daggerconductorexample.presentation.displayusers
 
 import com.hannesdorfmann.mosby3.mvi.MviBasePresenter
 import com.hannesdorfmann.mosby3.mvp.MvpView
@@ -29,7 +29,7 @@ class TitlePresenter @Inject constructor(
             .ofType(TitleViewState::class.java)
 
         val data = Observable
-            .just(TitleViewState.Display(emptyList()))
+            .just(TitleViewState.Display(userRepo.getUsers()))
             .delay(2,TimeUnit.SECONDS)
             .ofType(TitleViewState::class.java)
 

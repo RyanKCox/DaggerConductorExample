@@ -5,7 +5,7 @@ import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
 import com.hannesdorfmann.mosby3.mvi.MviBasePresenter
 import com.hannesdorfmann.mosby3.mvp.MvpView
-import com.revature.daggerconductorexample.presentation.title.DisplayUsersController
+import com.revature.daggerconductorexample.presentation.displayusers.DisplayUsersController
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import javax.inject.Inject
