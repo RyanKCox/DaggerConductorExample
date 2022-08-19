@@ -6,7 +6,8 @@ import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
 import com.revature.daggerconductorexample.databinding.ActivityMainBinding
-import com.revature.daggerconductorexample.presentation.title.TitleController
+import com.revature.daggerconductorexample.presentation.mainmenu.MainMenuController
+import com.revature.daggerconductorexample.presentation.title.DisplayUsersController
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             binding.controllerContainer,
             savedInstanceState)
         if(!router.hasRootController()){
-            router.setRoot(RouterTransaction.with(TitleController()))
+            router.setRoot(RouterTransaction.with(MainMenuController()))
         }
     }
 

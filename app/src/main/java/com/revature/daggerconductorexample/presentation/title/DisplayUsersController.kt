@@ -11,11 +11,11 @@ import com.hannesdorfmann.mosby3.MviController
 import com.jakewharton.rxbinding2.view.clicks
 import com.revature.daggerconductorexample.R
 import com.revature.daggerconductorexample.data.User
-import com.revature.daggerconductorexample.databinding.ControllerTitleBinding
+import com.revature.daggerconductorexample.databinding.ControllerDisplayusersBinding
 import com.revature.daggerconductorexample.presentation.di.DaggerPresenterComponent
 import javax.inject.Inject
 
-class TitleController: MviController<TitleView,TitlePresenter>(),TitleView {
+class DisplayUsersController: MviController<TitleView,TitlePresenter>(),TitleView {
 
     private lateinit var button: Button
     private lateinit var textTotalUsers:TextView
@@ -30,7 +30,7 @@ class TitleController: MviController<TitleView,TitlePresenter>(),TitleView {
         container: ViewGroup,
         savedViewState: Bundle?
     ): View {
-        val view = inflater.inflate(R.layout.controller_title,container,false)
+        val view = inflater.inflate(R.layout.controller_displayusers,container,false)
 
         setup(view)
 
@@ -38,12 +38,13 @@ class TitleController: MviController<TitleView,TitlePresenter>(),TitleView {
     }
 
     private fun setup(view: View) {
-        val binding = ControllerTitleBinding.bind(view)
+        val binding = ControllerDisplayusersBinding.bind(view)
         button = binding.buttonTitle
         textTotalUsers = binding.textTotalUsers
         textUserList = binding.textUsers
         progressBar = binding.progressBar
-        DaggerPresenterComponent.create().inject(this)
+        DaggerPresenterComponent.builder().provideRouter(router).build().inject(this)
+
 
 //        presenter = TitlePresenter()
 

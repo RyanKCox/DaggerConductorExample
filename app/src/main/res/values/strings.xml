@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DaggerConductorExample</string>
+    <string name="enter">Enter</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.revature.daggerconductorexample.presentation.title
 
+import com.bluelinelabs.conductor.Router
 import com.hannesdorfmann.mosby3.mvi.MviBasePresenter
 import com.hannesdorfmann.mosby3.mvp.MvpView
 import com.revature.daggerconductorexample.data.User
@@ -10,7 +11,8 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 class TitlePresenter @Inject constructor(
-    private val userRepo:UserRepository
+    private val userRepo:UserRepository,
+    private val router:Router
 ): MviBasePresenter<TitleView,TitleViewState>() {
 
 
