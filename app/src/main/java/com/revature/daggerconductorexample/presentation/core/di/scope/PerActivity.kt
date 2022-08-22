@@ -1,4 +1,4 @@
-package com.revature.daggerconductorexample.presentation.di.scope
+package com.revature.daggerconductorexample.presentation.core.di.scope
 
 import javax.inject.Scope
 

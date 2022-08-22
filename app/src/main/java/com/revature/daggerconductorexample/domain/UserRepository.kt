@@ -1,8 +1,9 @@
 package com.revature.daggerconductorexample.domain
 
 import com.revature.daggerconductorexample.data.User
-import com.revature.daggerconductorexample.presentation.di.scope.PerActivity
+import com.revature.daggerconductorexample.presentation.core.di.scope.PerActivity
 import javax.inject.Inject
+import javax.inject.Singleton
 
 interface UserRepository {
 
@@ -13,7 +14,7 @@ interface UserRepository {
 
     fun getUser(id:Int):User?
 }
-@PerActivity
+@Singleton
 class UserDataRepository @Inject constructor():UserRepository{
     override val userList: MutableList<User> = mutableListOf()
 

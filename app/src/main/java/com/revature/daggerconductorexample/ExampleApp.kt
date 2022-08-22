@@ -1,8 +1,8 @@
 package com.revature.daggerconductorexample
 
 import android.app.Application
-import com.revature.daggerconductorexample.presentation.di.scope.AppComponent
-import com.revature.daggerconductorexample.presentation.di.scope.DaggerAppComponent
+import com.revature.daggerconductorexample.presentation.core.di.AppComponent
+import com.revature.daggerconductorexample.presentation.core.di.DaggerAppComponent
 
 class ExampleApp:Application() {
     private lateinit var appComponent: AppComponent
@@ -11,5 +11,5 @@ class ExampleApp:Application() {
         super.onCreate()
         appComponent = DaggerAppComponent.create()
     }
-    fun getAppComponent():AppComponent = appComponent
+    fun getAppComponent(): AppComponent = appComponent
 }
